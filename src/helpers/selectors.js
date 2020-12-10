@@ -10,6 +10,18 @@ export function getAppointmentsForDay(state, day) {
   for (let appt of appointments) {
     if (state.appointments[appt]) apptArray.push(state.appointments[appt]);
   }
-  console.log("appt array", apptArray);
   return apptArray;
+}
+
+//return an object that contains the interview data if it is passed an object that contains an interviewer.
+export function getInterview(state, interview) {
+  if (interview) {
+    const interviewData = {
+      student: interview.student,
+      interviewer: state.interviewers[interview.interviewer],
+    };
+    return interviewData;
+  } else {
+    return null;
+  }
 }
