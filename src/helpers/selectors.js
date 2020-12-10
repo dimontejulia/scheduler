@@ -3,12 +3,10 @@ import DayList from "components/DayList";
 export function getAppointmentsForDay(state, day) {
   //get the day object
   const dayFound = state.days.find((currentDay) => currentDay.name === day);
-
   //if day not found
   if (!dayFound) {
     return [];
   }
-
   //get the appointments object for the day object
   //fill appointments object with the appointments
   const appointments = dayFound.appointments.map(
@@ -21,6 +19,17 @@ export function getAppointmentsForDay(state, day) {
 export function getInterviewersForDay(state, day) {
   const dayFound = state.days.find((currentDay) => currentDay.name === day);
   if (!dayFound) {
+    return [];
+  }
+
+  console.log("Day found ===", dayFound);
+  console.log("STATE:", state);
+  if (
+    dayFound.length <= 0 ||
+    !state.interviewers ||
+    !state.days ||
+    state.interviewers.length === 0
+  ) {
     return [];
   }
 
