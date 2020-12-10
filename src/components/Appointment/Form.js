@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
-import InterviewerListItem from "components/InterviewerListItem";
-import classnames from "classnames";
 
 export default function Error(props) {
   const [name, setName] = useState(props.name || "");
