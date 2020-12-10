@@ -1,16 +1,34 @@
 import DayList from "components/DayList";
 
 export function getAppointmentsForDay(state, day) {
-  let apptArray = [];
-  const selectedDay = state.days.filter((d) => d.name === day);
-  if (!state.days.length || !selectedDay.length) {
-    return apptArray;
+  //get the day object
+  const dayFound = state.days.find((currentDay) => currentDay.name === day);
+
+  //if day not found
+  if (!dayFound) {
+    return [];
   }
-  const appointments = selectedDay[0].appointments;
-  for (let appt of appointments) {
-    if (state.appointments[appt]) apptArray.push(state.appointments[appt]);
+
+  //get the appointments object for the day object
+  //fill appointments object with the appointments
+  const appointments = dayFound.appointments.map(
+    (appointmentID) => state.appointments[appointmentID]
+  );
+  return appointments;
+}
+
+//given the day, return an object of interviewers
+export function getInterviewersForDay(state, day) {
+  const dayFound = state.days.find((currentDay) => currentDay.name === day);
+  if (!dayFound) {
+    return [];
   }
-  return apptArray;
+
+  //get the interviewer objects for that day object
+  const interviewers = dayFound.interviewers.map(
+    (interviewerID) => state.interviewers[interviewerID]
+  );
+  return interviewers;
 }
 
 //return an object that contains the interview data if it is passed an object that contains an interviewer.
