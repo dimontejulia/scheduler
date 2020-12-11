@@ -31,7 +31,6 @@ export default function Application(props) {
       axios.get(GET_INTERVIEWERS),
     ])
       .then((all) => {
-        console.log("all", all);
         setState((prev) => ({
           ...prev,
           days: all[0].data,

@@ -3,7 +3,6 @@ import classnames from "classnames";
 import "components/DayListItem.scss";
 
 export default function DayListItem(props) {
-  console.log("top props", props);
   const dayListItemClass = classnames("li", {
     "day-list__item": props,
     "day-list__item--selected": props.selected,
@@ -11,7 +10,6 @@ export default function DayListItem(props) {
   });
 
   const formatSpots = function (spots) {
-    console.log("format props", spots);
     if (spots > 1) {
       return `${spots} spots remaining`;
     } else if (spots === 1) {
