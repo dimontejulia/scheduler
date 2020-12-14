@@ -1,4 +1,3 @@
-import Empty from "components/Appointment/Show";
 import { useState } from "react";
 
 export default function useVisualMode(initial) {
@@ -13,16 +12,16 @@ export default function useVisualMode(initial) {
       setHistory((prev) => [...prev, newMode]);
     } else {
       setMode(newMode);
-      setHistory(() => [...history.slice(0, history.length - 1), newMode]);
+      setHistory((prev) => [...prev.slice(0, prev.length - 1), newMode]);
     }
   }
 
   //set the mode to the previous item in our history array
   function back() {
-    if (history.length >= 1) {
-      const newHistory = history.slice(0, -1);
+    if (history.length > 1) {
+      const newHistory = history.slice(0, history.length - 1);
       const prevHistory = newHistory.length - 1;
-      setMode(newHistory[prevHistory] || "EMPTY");
+      setMode(newHistory[prevHistory]);
       setHistory(() => [...newHistory]);
     }
   }

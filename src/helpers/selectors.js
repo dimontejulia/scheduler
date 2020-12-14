@@ -1,5 +1,3 @@
-import DayList from "components/DayList";
-
 export function getAppointmentsForDay(state, day) {
   //get the day object
   const dayFound = state.days.find((currentDay) => currentDay.name === day);
@@ -21,9 +19,6 @@ export function getInterviewersForDay(state, day) {
   if (!dayFound) {
     return [];
   }
-
-  console.log("Day found ===", dayFound);
-  console.log("STATE:", state);
   if (
     dayFound.length <= 0 ||
     !state.interviewers ||
@@ -51,4 +46,13 @@ export function getInterview(state, interview) {
   } else {
     return null;
   }
+}
+
+export function getDayForAppointment(state, appointment) {
+  for (let day of state.days) {
+    if (day.appointments.includes(appointment.id)) {
+      return day;
+    }
+  }
+  return null;
 }
