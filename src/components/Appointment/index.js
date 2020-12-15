@@ -27,18 +27,16 @@ export default function Appointment(props) {
       interviewer,
     };
     transition(SAVING);
-    const subtractSpot = true;
     props
-      .bookInterview(props.id, interview, subtractSpot)
+      .bookInterview(props.id, interview)
       .then(() => transition(SHOW))
       .catch((error) => transition(ERROR_SAVE, true));
   }
 
   function del(name) {
     transition(DELETING, true);
-    const addSpot = true;
     props
-      .cancelInterview(props.id, addSpot)
+      .cancelInterview(props.id)
       .then(() => transition(EMPTY))
       .catch((error) => transition(ERROR_DEL, true));
   }
