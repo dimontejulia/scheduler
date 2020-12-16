@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Show(props) {
-  console.log("SHOW PROPS ====", props);
   const interviewer = props.interviewers[props.interviewer - 1];
   return (
     <main className="appointment__card appointment__card--show">

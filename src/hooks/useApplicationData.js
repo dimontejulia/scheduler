@@ -29,7 +29,6 @@ export default function useApplicationData() {
 
     //what day was the interview on - day obj
     const day = getDayForAppointment(state, appointment);
-    console.log("DAY", day);
 
     let newSpots = 0;
     for (let appt of day.appointments) {
