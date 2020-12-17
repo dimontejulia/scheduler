@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
-import PropTypes from "prop-types";
 
 export default function Error(props) {
   const [name, setName] = useState(props.name || "");
