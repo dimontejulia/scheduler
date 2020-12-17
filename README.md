@@ -6,6 +6,7 @@ React application that allows users to create, edit and delete interview appoint
 - Data is persisted by the API server using a PostgreSQL database.
 - The client application communicates with an API server over HTTP, using the JSON format.
   Jest tests are used through the development of the project.
+- Site was deployed with heroku and deployed with netlify
 
 ## Screenshots
 
