@@ -45,10 +45,6 @@ export default function Appointment(props) {
     transition(CONFIRM);
   }
 
-  function edit() {
-    transition(EDIT);
-  }
-
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
