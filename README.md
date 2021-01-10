@@ -20,13 +20,13 @@ User adds name and selects interviewer to form
 !["form"](https://github.com/dimontejulia/scheduler/blob/master/public/images/screenshots/new-interview.png)
 
 On hover, options to update appointment or Delete are shown
-!["editOrDelete"](https://github.com/dimontejulia/scheduler/blob/master/public/images/screenshots/delete-interview.png)
+!["editOrDelete"](https://github.com/dimontejulia/scheduler/blob/master/public/images/screenshots/hover-delete.png)
 
 Delete Confirmation
 !["deleteConfirmation"](https://github.com/dimontejulia/scheduler/blob/master/public/images/screenshots/delete-interview.png)
 
 When the user sucessfully deletes an appointment, spots remaining updates and the appointment is removed
-!["postDelete"](https://github.com/dimontejulia/scheduler/blob/master/public/images/%2B%20Icon%20shown%20%26%20spots%20remaining%20reflected.png)
+!["postDelete"](https://github.com/dimontejulia/scheduler/blob/master/public/images/screenshots/post-delete.png)
 
 ## Technical Specifications
 
